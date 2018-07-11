@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Smart.Billing</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="assets/_layout/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/_layout/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="assets/_layout/css/datepicker3.css" rel="stylesheet" />
+  <link href="assets/_layout/css/styles.css" rel="stylesheet" />
+  <script>
+    $('#btnSelectedImageIntro').on('click', function (e) {
+      //alert("ok");
+  e.preventDefault();
+  var finder = new CKFinder();
+  finder.selectActionFunction = function (url) {
+    $('#txtImageIntro').val(url);
+    document.getElementById("imageIntro").src = url;
+    document.getElementById("imageIntro").style.backgroundColor = 'lightgrey';
+    document.getElementById("imageIntro").hidden = false;
+  }
+  finder.popup();
+  })
+  function change() {
+    var get = document.getElementById("getColor").value;
+    document.getElementById("txtColor").value = get;
+  }
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://localhost:53986/" style="color:#999999;"><span style="color:chartreuse">Smart</span>Billing</a>
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+    
+  <div id="sidebar-collapse menu" class="col-sm-3 col-lg-2 sidebar" style="display:block;">
+    <div class="profile-sidebar">
+      <div class="profile-userpic">
+        <img src="assets/_layout/images/ffff.png" class="img-responsive" alt="">
+      </div>
+      <div class="profile-usertitle">
+        <div class="profile-usertitle-name">Admin</div>
+        <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="divider"></div>
+      <ul class="nav menu">
+        <li><div id="home" onclick="clickItem(this)"><img src="assets/_layout/images/home.png" width="17" height="17" style="margin-right: 5px;" />Home</div></li>
+        <li><div id="intro" onclick="clickItem(this)"><img src="assets/_layout/images/introduce.png" width="17" height="17" style="margin-right: 5px;" />Introduces</div></li>
+        <li><div id="news" onclick="clickItem(this)"><em class="fa fa-clone">&nbsp;</em>News</div></li>
+        <li><div id="partners" onclick="clickItem(this)"><img src="assets/_layout/images/partners.png" width="17" height="17" style="margin-right: 5px;" />Partners</div></li>
+        <li><a href="http://localhost:53986/Admin/LoginAdmin"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+      </ul>
+  </div><!--/.sidebar-->
+
+  <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" >
+      <app-root></app-root>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="assets/js/sp-form-admin-index.js"></script>
+  <script src="assets/_layout/js/jquery-1.11.1.min.js"></script>
+  <script src="assets/_layout/js/bootstrap.min.js"></script>
+  <script src="assets/_layout/js/bootstrap-datepicker.js"></script>
+  <script src="assets/_layout/js/custom.js"></script>
+  <script src="assets/plugins/ckfinder.js"></script>
+  <script src="assets/plugins/ckfinder.js"></script>
+</body>
+</html>
