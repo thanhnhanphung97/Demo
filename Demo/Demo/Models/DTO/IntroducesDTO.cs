@@ -11,7 +11,7 @@ namespace Demo.Models.DTO
 {
     public class IntroducesDTO
     {
-        public IntroducesDTO(int id,string name,string img,float data,string describe,string color)
+        public IntroducesDTO(int id, string name, string img, float data, string describe, string color)
         {
             this.Id = id;
             this.Name = name;
@@ -58,7 +58,14 @@ namespace Demo.Models.DTO
         public string Describe { get => describe; set => describe = value; }
         [Required(ErrorMessage = "This is a required field.")]
         public string Color { get => color; set => color = value; }
-        //public HttpPostedFileBase ImageFile { get; set; }
+
+        //public int Id { get; set; }
+        //public string Name { get; set; }
+        //public string Img { get; set; }
+        //public float Data { get; set; }
+        //public string Describe { get; set; }
+        //public string Color { get; set; }
+
 
     }
 }

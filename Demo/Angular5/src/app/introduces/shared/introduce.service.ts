@@ -12,20 +12,20 @@ export class IntroduceService {
   introduceList: Introduce[];
   constructor(private http: Http) { }
 
-  postIntroduce(intro: Introduce)
+  postIntroduce(introduce: Introduce)
   {
-    var body = JSON.stringify(intro);
+    var body = JSON.stringify(introduce);
     var headerOptions = new Headers({'Content-Type':'application/json'});
-    var requestOptions = new RequestOptions({method: RequestMethod.Post,headers: headerOptions});
+    var requestOptions = new RequestOptions({method : RequestMethod.Post,headers : headerOptions});
     return this.http.post('http://localhost:53986/api/Introduce',body,requestOptions).map(x=>x.json());
   }
 
-  putIntroduce(id,intro)
+  putIntroduce(id,introduce)
   {
-    var body = JSON.stringify(intro);
+    var body = JSON.stringify(introduce);
     var headerOptions = new Headers({'Content-Type':'application/json'});
     var requestOptions = new RequestOptions({method: RequestMethod.Put,headers: headerOptions});
-    return this.http.post('http://localhost:53986/api/Introduce/'+id,body,requestOptions).map(res=>res.json());
+    return this.http.put('http://localhost:53986/api/Introduce/'+id,body,requestOptions).map(res=>res.json());
   }
 
   getIntroduceList()

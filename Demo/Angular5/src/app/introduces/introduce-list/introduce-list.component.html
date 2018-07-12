@@ -2,6 +2,7 @@
   <button (click)="toggleDiv()">Create</button>
   <table class="table table-sm table-hover">
     <tr>
+      <th hidden>Id</th>
       <th width="150">Name</th>
       <th width="200">Img</th>
       <th width="150">Data</th>
@@ -16,18 +17,15 @@
       <td>{{intro.Data}}</td>
       <td>{{intro.Describe}}</td>
       <td><input type="color" style="height:20px;width:20px;float: left;" disabled="disabled" value="{{intro.Color}}" /></td>
+      <td>
+        <a class="btn" (click)="showForEdit(intro)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn text-danger" (click)="onDelete(intro.Id)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
     </tr>
   </table>
 </div>
-<div>
-    <div class="form-group">
-        <p class="control-label col-md-2">Img</p>
-        <input type="text" class="col-md-10" style="width: 500px; border: 1px solid #ccc; border-radius: 4px; height: 34px;display:block;" readonly="readonly" id="txtImageIntro" required />
-        <a id="btnSelectedImageIntro" href="#" class="btn" style="margin-left:-13px;"><div style="border:1px black solid;height:150px;width:150px;"><img src="" height="150" width="150" id="imageIntro" hidden="hidden" /></div></a>
-    </div>
-    <div class="form-group">
-        <p class="control-label col-md-2">Color</p>
-        <input type="text" style="float:left; width: 500px; border: 1px solid #ccc; border-radius: 4px; height: 34px;padding: 6px 12px;display:block;" class="col-md-10 form-control" readonly="readonly" id="txtColor" required />
-        <input type="color" id="getColor" style="height:34px; float: left; width:68px;" onchange="change()" />
-    </div>
-</div>
+

@@ -1,6 +1,28 @@
-<!-- <form class="intro-form" #introduceForm="ngForm" (ngSubmit)="onSubmit(introduceForm)">
-  <input type="hidden" name="IntroduceID" #Id="ngModel">
-</form> -->
-<p>
-  introduce-work
-</p>
+<form class="introForm" #introduceForm="ngForm" (ngSubmit)="onSubmit(introduceForm)">
+  <input type="hidden" name="Id" #Id="ngModel" [(ngModel)]="introduceService.selectedIntroduce.Id" >
+  <div class="form-row">
+    <div class="form-group col-md-12">
+        <input type="text" class="form-control" name="Name" #Name="ngModel" [(ngModel)]="introduceService.selectedIntroduce.Name" placeholder="Introduce Name">
+    </div>
+    <div class="form-group col-md-12">
+        <input type="text" class="form-control" name="Img" #Img="ngModel" [(ngModel)]="introduceService.selectedIntroduce.Img" placeholder="Introduce Img">    
+    </div>
+    <div class="form-group col-md-12">
+        <input type="text" class="form-control" name="Data" #Data="ngModel" [(ngModel)]="introduceService.selectedIntroduce.Data" placeholder="Introduce Data">    
+    </div>
+    <div class="form-group col-md-12">
+        <input type="text" class="form-control" name="Describe" #Describe="ngModel" [(ngModel)]="introduceService.selectedIntroduce.Describe" placeholder="Introduce Describe">    
+    </div>
+    <div class="form-group col-md-12">
+        <input type="text" class="form-control" name="Color" #Color="ngModel" [(ngModel)]="introduceService.selectedIntroduce.Color" placeholder="Introduce Color">    
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <button class="btn btn-lg btn-block btn-info" type="submit"><i class="fa fa-floppy-o"></i> Submit</button>
+    </div>
+    <div class="col-md-4 form-group">
+        <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(introduceForm)"><i class="fa fa-repeat"></i> Reset</button>
+    </div>
+  </div>
+</form>

@@ -20,8 +20,19 @@ export class IntroduceListComponent implements OnInit {
   ngOnInit() {
     this.introduceService.getIntroduceList();
   }
+  showForEdit(intro: Introduce)
+  {
+    this.introduceService.selectedIntroduce = Object.assign({},intro);
+  }
 
-
+  onDelete(id: number)
+  {
+    if(confirm('Are you sure to delete this record ?')==true){
+      this.introduceService.deleteIntroduce(id).subscribe(x=>{
+        this.introduceService.getIntroduceList();
+      })
+    }
+  }
 
 
 }
